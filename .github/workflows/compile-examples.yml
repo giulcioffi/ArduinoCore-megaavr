@@ -37,6 +37,6 @@ jobs:
             # Overwrite the Board Manager installation with the local platform
             - source-path: "./"
               name: "arduino:megaavr"
-          sketch-paths: "examples"
+          sketch-paths: "libraries"
           size-report-sketch: 'FONAtest'
           enable-size-deltas-report: 'true'
