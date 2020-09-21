@@ -25,11 +25,11 @@ jobs:
     env:
       # sketch paths to compile (recursive) for all boards
       UNIVERSAL_SKETCH_PATHS: |
-        - extras/examples
-        - libraries/Wire
-        - libraries/SPI
-        - libraries/SoftwareSerial
-        - libraries/EEPROM
+        #- extras/examples
+        #- libraries/Wire
+        #- libraries/SPI
+        #- libraries/SoftwareSerial
+        #- libraries/EEPROM
         - ~/Arduino/libraries
 
     strategy:
@@ -74,38 +74,38 @@ jobs:
         with:
           fqbn: ${{ matrix.fqbn }}
           libraries: |
-            - name: Adafruit MQTT Library
             - name: Servo
             - name: LiquidCrystal
             - name: MFRC522
             - name: Ethernet
-            - name: ArduinoBearSSL
+            # - name: ArduinoBearSSL
             - name: Arduino_LSM9DS1
             - name: TFT
-            - name: ArduinoMqttClient
-            - name: Arduino_CRC32
+            # - name: ArduinoMqttClient
+            # - name: Arduino_CRC32
             - name: Arduino_LSM6DS3
             - name: Stepper
             - name: SD
-            - name: Arduino_JSON
+            # - name: Arduino_JSON
             - name: Arduino_HTS221
-            - name: Arduino_DebugUtils
+            # - name: Arduino_DebugUtils
             - name: Arduino_LPS22HB
             - name: ArduinoDMX
-            - name: ArduinoRS485
-            - name: Arduino_OAuth
+            # - name: ArduinoRS485
+            # - name: Arduino_OAuth
             - name: WiFiNINA
-            - name: ArduinoBLE
-            - name: ArduinoECCX08
-            - name: ArduinoDMX
-            - name: ArduinoModbus
-            - name: Arduino_APDS9960
-            - name: Arduino_HTS221
-            - name: Arduino_KNN
-            - name: Arduino_LPS22HB
-            - name: Arduino_LSM6DS3
-            - name: Arduino_LSM9DS1
-            - name: EduIntro
+            # - name: ArduinoBLE
+            # - name: ArduinoECCX08
+            # - name: ArduinoDMX
+            # - name: ArduinoHttpClient
+            # - name: ArduinoModbus
+            # - name: Arduino_APDS9960
+            # - name: Arduino_HTS221
+            # - name: Arduino_KNN
+            # - name: Arduino_LPS22HB
+            # - name: Arduino_LSM6DS3
+            # - name: Arduino_LSM9DS1
+            # - name: EduIntro
             - name: Firmata
             - name: Madgwick
             - name: Stepper
