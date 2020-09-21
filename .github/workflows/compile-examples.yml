@@ -70,7 +70,7 @@ jobs:
           # CapacitiveSensor library does not support megaAVR core yet
           rm -r "$GITHUB_WORKSPACE/extras/examples/10.StarterKit_BasicKit/p13_TouchSensorLamp"
       - name: Compile examples
-        uses: arduino/actions/libraries/compile-examples@master
+        uses: arduino/compile-sketches@main
         with:
           fqbn: ${{ matrix.fqbn }}
           libraries: |
@@ -78,18 +78,19 @@ jobs:
             - name: LiquidCrystal
             - name: MFRC522
             - name: Ethernet
-            # - name: ArduinoBearSSL
+            - name: WiFi101
+            - name: ArduinoBearSSL
             - name: Arduino_LSM9DS1
             - name: TFT
-            # - name: ArduinoMqttClient
+            - name: ArduinoMqttClient
             # - name: Arduino_CRC32
             - name: Arduino_LSM6DS3
             - name: Stepper
-            - name: SD
+            # - name: SD
             # - name: Arduino_JSON
-            - name: Arduino_HTS221
+            # - name: Arduino_HTS221
             # - name: Arduino_DebugUtils
-            - name: Arduino_LPS22HB
+            # - name: Arduino_LPS22HB
             - name: ArduinoDMX
             # - name: ArduinoRS485
             # - name: Arduino_OAuth
@@ -97,7 +98,7 @@ jobs:
             # - name: ArduinoBLE
             # - name: ArduinoECCX08
             # - name: ArduinoDMX
-            # - name: ArduinoHttpClient
+            - name: ArduinoHttpClient
             # - name: ArduinoModbus
             # - name: Arduino_APDS9960
             # - name: Arduino_HTS221
