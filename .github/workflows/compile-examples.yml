@@ -30,7 +30,16 @@ jobs:
         #- libraries/SPI
         #- libraries/SoftwareSerial
         #- libraries/EEPROM
-        - ~/Arduino/libraries
+        - ~/Arduino/libraries/ArduinoBearSSL/examples
+        - ~/Arduino/libraries/TFT/examples
+        - ~/Arduino/libraries/ArduinoMqttClient/examples
+        - ~/Arduino/libraries/Arduino_OAuth/examples
+        - ~/Arduino/libraries/ArduinoBLE/examples
+        - ~/Arduino/libraries/ArduinoHttpClient/examples
+        - ~/Arduino/libraries/ArduinoModbus/examples
+        - ~/Arduino/libraries/Arduino_APDS9960/examples
+        - ~/Arduino/libraries/Arduino_KNN/examples
+        - ~/Arduino/libraries/Firmata/examples
 
     strategy:
       fail-fast: false
@@ -83,30 +92,30 @@ jobs:
             - name: Arduino_LSM9DS1
             - name: TFT
             - name: ArduinoMqttClient
-            # - name: Arduino_CRC32
+            - name: Arduino_CRC32
             - name: Arduino_LSM6DS3
             - name: Stepper
-            # - name: SD
-            # - name: Arduino_JSON
-            # - name: Arduino_HTS221
-            # - name: Arduino_DebugUtils
-            # - name: Arduino_LPS22HB
+            - name: SD
+            - name: Arduino_JSON
+            - name: Arduino_HTS221
+            - name: Arduino_DebugUtils
+            - name: Arduino_LPS22HB
             - name: ArduinoDMX
-            # - name: ArduinoRS485
-            # - name: Arduino_OAuth
+            - name: ArduinoRS485
+            - name: Arduino_OAuth
             - name: WiFiNINA
-            # - name: ArduinoBLE
-            # - name: ArduinoECCX08
-            # - name: ArduinoDMX
+            - name: ArduinoBLE
+            - name: ArduinoECCX08
+            - name: ArduinoDMX
             - name: ArduinoHttpClient
-            # - name: ArduinoModbus
-            # - name: Arduino_APDS9960
-            # - name: Arduino_HTS221
-            # - name: Arduino_KNN
-            # - name: Arduino_LPS22HB
-            # - name: Arduino_LSM6DS3
-            # - name: Arduino_LSM9DS1
-            # - name: EduIntro
+            - name: ArduinoModbus
+            - name: Arduino_APDS9960
+            - name: Arduino_HTS221
+            - name: Arduino_KNN
+            - name: Arduino_LPS22HB
+            - name: Arduino_LSM6DS3
+            - name: Arduino_LSM9DS1
+            - name: EduIntro
             - name: Firmata
             - name: Madgwick
             - name: Stepper
@@ -119,7 +128,7 @@ jobs:
               name: "arduino:megaavr"
           sketch-paths: |
             ${{ env.UNIVERSAL_SKETCH_PATHS }}
-          enable-deltas-report: 'true'
+          enable-deltas-report: 'false'
           verbose: 'true'
 
       - name: Save memory usage change report as artifact
