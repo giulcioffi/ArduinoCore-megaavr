@@ -97,7 +97,8 @@ jobs:
       - name: Checkout Basic examples
         uses: actions/checkout@v2
         with:
-          repository: arduino/arduino-examples
+          repository: giulcioffi/arduino-examples
+          ref: ArduinoCoreAPItest
           path: extras
 
       - name: Delete incompatible examples
