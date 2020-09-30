@@ -99,12 +99,15 @@ jobs:
               name: "arduino:megaavr"
           sketch-paths: |
             ${{ env.UNIVERSAL_SKETCH_PATHS }}
-          enable-deltas-report: 'false'
+          enable-deltas-report: 'true'
           continue-on-error: 'true'
           verbose: 'true'
 
+      - name: Check against database of expected results
+        uses: giulcioffi/compile-sketches-database-check@master
+
       - name: Save memory usage change report as artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
-          name: size-deltas-reports
-          path: size-deltas-reports
+          name: sketches-reports
+          path: sketches-reports
