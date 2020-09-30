@@ -25,21 +25,42 @@ jobs:
     env:
       # sketch paths to compile (recursive) for all boards
       UNIVERSAL_SKETCH_PATHS: |
-        #- extras/examples
-        #- libraries/Wire
-        #- libraries/SPI
-        #- libraries/SoftwareSerial
-        #- libraries/EEPROM
+        - extras/examples
+        - libraries/Wire
+        - libraries/SPI
+        - libraries/SoftwareSerial
+        - libraries/EEPROM
+        - ~/Arduino/libraries/Servo/examples
+        - ~/Arduino/libraries/LiquidCrystal/examples
+        - ~/Arduino/libraries/MFRC522/examples
+        - ~/Arduino/libraries/Ethernet/examples
+        - ~/Arduino/libraries/WiFi101/examples
         - ~/Arduino/libraries/ArduinoBearSSL/examples
+        - ~/Arduino/libraries/Arduino_LSM9DS1/examples
         - ~/Arduino/libraries/TFT/examples
         - ~/Arduino/libraries/ArduinoMqttClient/examples
+        - ~/Arduino/libraries/Arduino_CRC32/examples
+        - ~/Arduino/libraries/Arduino_LSM6DS3/examples
+        - ~/Arduino/libraries/Stepper/examples
+        - ~/Arduino/libraries/SD/examples
+        - ~/Arduino/libraries/Arduino_JSON/examples
+        - ~/Arduino/libraries/Arduino_HTS221/examples
+        - ~/Arduino/libraries/Arduino_DebugUtils/examples
+        - ~/Arduino/libraries/Arduino_LPS22HB/examples
+        - ~/Arduino/libraries/ArduinoDMX/examples
+        - ~/Arduino/libraries/ArduinoRS485/examples
         - ~/Arduino/libraries/Arduino_OAuth/examples
+        - ~/Arduino/libraries/WiFiNINA/examples
         - ~/Arduino/libraries/ArduinoBLE/examples
+        - ~/Arduino/libraries/ArduinoECCX08/examples
         - ~/Arduino/libraries/ArduinoHttpClient/examples
         - ~/Arduino/libraries/ArduinoModbus/examples
         - ~/Arduino/libraries/Arduino_APDS9960/examples
         - ~/Arduino/libraries/Arduino_KNN/examples
         - ~/Arduino/libraries/Firmata/examples
+        - ~/Arduino/libraries/EduIntro/examples
+        - ~/Arduino/libraries/Madgwick/examples
+        - ~/Arduino/libraries/WiFi/examples
 
     strategy:
       fail-fast: false
