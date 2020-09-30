@@ -39,28 +39,6 @@ jobs:
         - ~/Arduino/libraries/Arduino_LSM9DS1/examples
         - ~/Arduino/libraries/TFT/examples
         - ~/Arduino/libraries/ArduinoMqttClient/examples
-        - ~/Arduino/libraries/Arduino_CRC32/examples
-        - ~/Arduino/libraries/Arduino_LSM6DS3/examples
-        - ~/Arduino/libraries/Stepper/examples
-        - ~/Arduino/libraries/SD/examples
-        - ~/Arduino/libraries/Arduino_JSON/examples
-        - ~/Arduino/libraries/Arduino_HTS221/examples
-        - ~/Arduino/libraries/Arduino_DebugUtils/examples
-        - ~/Arduino/libraries/Arduino_LPS22HB/examples
-        - ~/Arduino/libraries/ArduinoDMX/examples
-        - ~/Arduino/libraries/ArduinoRS485/examples
-        - ~/Arduino/libraries/Arduino_OAuth/examples
-        - ~/Arduino/libraries/WiFiNINA/examples
-        - ~/Arduino/libraries/ArduinoBLE/examples
-        - ~/Arduino/libraries/ArduinoECCX08/examples
-        - ~/Arduino/libraries/ArduinoHttpClient/examples
-        - ~/Arduino/libraries/ArduinoModbus/examples
-        - ~/Arduino/libraries/Arduino_APDS9960/examples
-        - ~/Arduino/libraries/Arduino_KNN/examples
-        - ~/Arduino/libraries/Firmata/examples
-        - ~/Arduino/libraries/EduIntro/examples
-        - ~/Arduino/libraries/Madgwick/examples
-        - ~/Arduino/libraries/WiFi/examples
 
     strategy:
       fail-fast: false
@@ -100,7 +78,7 @@ jobs:
           # CapacitiveSensor library does not support megaAVR core yet
           rm -r "$GITHUB_WORKSPACE/extras/examples/10.StarterKit_BasicKit/p13_TouchSensorLamp"
       - name: Compile examples
-        uses: arduino/compile-sketches@main
+        uses: giulcioffi/compile-sketches@CheckAgainstDatabase
         with:
           fqbn: ${{ matrix.fqbn }}
           libraries: |
@@ -113,34 +91,6 @@ jobs:
             - name: Arduino_LSM9DS1
             - name: TFT
             - name: ArduinoMqttClient
-            - name: Arduino_CRC32
-            - name: Arduino_LSM6DS3
-            - name: Stepper
-            - name: SD
-            - name: Arduino_JSON
-            - name: Arduino_HTS221
-            - name: Arduino_DebugUtils
-            - name: Arduino_LPS22HB
-            - name: ArduinoDMX
-            - name: ArduinoRS485
-            - name: Arduino_OAuth
-            - name: WiFiNINA
-            - name: ArduinoBLE
-            - name: ArduinoECCX08
-            - name: ArduinoDMX
-            - name: ArduinoHttpClient
-            - name: ArduinoModbus
-            - name: Arduino_APDS9960
-            - name: Arduino_HTS221
-            - name: Arduino_KNN
-            - name: Arduino_LPS22HB
-            - name: Arduino_LSM6DS3
-            - name: Arduino_LSM9DS1
-            - name: EduIntro
-            - name: Firmata
-            - name: Madgwick
-            - name: Stepper
-            - name: WiFi
           platforms: |
             # Use Board Manager to install the latest release of Arduino megaAVR Boards to get the toolchain
             - name: "arduino:megaavr"
@@ -150,6 +100,7 @@ jobs:
           sketch-paths: |
             ${{ env.UNIVERSAL_SKETCH_PATHS }}
           enable-deltas-report: 'false'
+          continue-on-error: 'true'
           verbose: 'true'
 
       - name: Save memory usage change report as artifact
