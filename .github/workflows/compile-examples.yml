@@ -25,11 +25,11 @@ jobs:
     env:
       # sketch paths to compile (recursive) for all boards
       UNIVERSAL_SKETCH_PATHS: |
-        - extras/examples
-        - libraries/Wire
-        - libraries/SPI
-        - libraries/SoftwareSerial
-        - libraries/EEPROM
+        # - extras/examples
+        # - libraries/Wire
+        # - libraries/SPI
+        # - libraries/SoftwareSerial
+        # - libraries/EEPROM
         - ~/Arduino/libraries/Servo/examples
         - ~/Arduino/libraries/LiquidCrystal/examples
         - ~/Arduino/libraries/MFRC522/examples
