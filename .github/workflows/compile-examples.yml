@@ -30,15 +30,15 @@ jobs:
         # - libraries/SPI
         # - libraries/SoftwareSerial
         # - libraries/EEPROM
-        - ~/Arduino/libraries/Servo/examples
-        - ~/Arduino/libraries/LiquidCrystal/examples
-        - ~/Arduino/libraries/MFRC522/examples
+        # - ~/Arduino/libraries/Servo/examples
+        # - ~/Arduino/libraries/LiquidCrystal/examples
+        # - ~/Arduino/libraries/MFRC522/examples
         - ~/Arduino/libraries/Ethernet/examples
         - ~/Arduino/libraries/WiFi101/examples
-        - ~/Arduino/libraries/ArduinoBearSSL/examples
-        - ~/Arduino/libraries/Arduino_LSM9DS1/examples
-        - ~/Arduino/libraries/TFT/examples
-        - ~/Arduino/libraries/ArduinoMqttClient/examples
+        # - ~/Arduino/libraries/ArduinoBearSSL/examples
+        # - ~/Arduino/libraries/Arduino_LSM9DS1/examples
+        # - ~/Arduino/libraries/TFT/examples
+        # - ~/Arduino/libraries/ArduinoMqttClient/examples
 
     strategy:
       fail-fast: false
