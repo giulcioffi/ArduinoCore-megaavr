@@ -100,7 +100,7 @@ jobs:
           sketch-paths: |
             ${{ env.UNIVERSAL_SKETCH_PATHS }}
           enable-deltas-report: 'true'
-          continue-on-error: 'true'
+          allow-failures: 'true'
           verbose: 'true'
 
       - name: Check against database of expected results
