@@ -104,6 +104,16 @@ jobs:
           allow-failures: 'true'
           verbose: 'true'
 
+      - name: Save memory usage change report as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: sketches-reports
+          path: sketches-reports
+
+  check-database:
+    needs: compile-test
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout Repository Containing Database
         uses: actions/checkout@v2
         with:
@@ -115,12 +125,6 @@ jobs:
         run: |
           mv "$GITHUB_WORKSPACE/extras/database/database-reports" "$GITHUB_WORKSPACE"
           rm -r "$GITHUB_WORKSPACE/extras/database"
-
-      - name: Save memory usage change report as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: sketches-reports
-          path: sketches-reports
 
       - name: Check against database of expected results
         uses: giulcioffi/validate-compile-sketches-report@main
