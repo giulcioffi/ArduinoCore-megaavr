@@ -114,6 +114,12 @@ jobs:
     needs: compile-test
     runs-on: ubuntu-latest
     steps:
+      - name: Download Sketches Reports Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: sketches-reports
+          path: sketches-reports
+
       - name: Checkout Repository Containing Database
         uses: actions/checkout@v2
         with:
@@ -129,6 +135,11 @@ jobs:
       - name: Check against database of expected results
         uses: giulcioffi/validate-compile-sketches-report@main
         with:
-          #database-reports-source: extras/database-reports
           verbose: 'true'
           sketches-reports-source: $GITHUB_WORKSPACE
+
+      - name: Upload modified artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: sketches-reports
+          path: sketches-reports
