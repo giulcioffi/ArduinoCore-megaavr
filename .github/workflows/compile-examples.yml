@@ -77,6 +77,7 @@ jobs:
           rm -r "$GITHUB_WORKSPACE/extras/examples/10.StarterKit_BasicKit/p11_CrystalBall"
           # CapacitiveSensor library does not support megaAVR core yet
           rm -r "$GITHUB_WORKSPACE/extras/examples/10.StarterKit_BasicKit/p13_TouchSensorLamp"
+
       - name: Compile examples
         uses: giulcioffi/compile-sketches@CheckAgainstDatabase
         with:
@@ -126,3 +127,4 @@ jobs:
         with:
           #database-reports-source: extras/database-reports
           verbose: 'true'
+          sketches-reports-source: $GITHUB_WORKSPACE
