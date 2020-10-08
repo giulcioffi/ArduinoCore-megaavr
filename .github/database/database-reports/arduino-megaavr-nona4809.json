@@ -1489,7 +1489,7 @@
         },
         {
           "name": "/github/home/Arduino/libraries/WiFi101/examples/AP_SimpleWebServer",
-          "compilation_success": false,
+          "compilation_success": true,
           "sizes": [
             {
               "name": "flash",
@@ -1511,7 +1511,7 @@
         },
         {
           "name": "/github/home/Arduino/libraries/WiFi101/examples/CheckWifi101FirmwareVersion",
-          "compilation_success": false,
+          "compilation_success": true,
           "sizes": [
             {
               "name": "flash",

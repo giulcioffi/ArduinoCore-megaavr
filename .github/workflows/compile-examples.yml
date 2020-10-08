@@ -11,7 +11,7 @@ on:
       - "platform.txt"
   push:
     paths:
-      - ".github/workflows/compile-examples.yml"
+      - ".github/**"
       - "cores/**"
       - "libraries/**"
       - "variants/**"
