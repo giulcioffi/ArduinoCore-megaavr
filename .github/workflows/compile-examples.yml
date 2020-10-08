@@ -111,15 +111,15 @@ jobs:
           name: sketches-reports
           path: sketches-reports
 
-      #- name: Download Sketches Reports Artifact
-      #  uses: actions/download-artifact@v2
-      #  with:
-      #    name: sketches-reports
-      #    path: sketches-reports
+      - name: Download Sketches Reports Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: sketches-reports
+          path: downloaded-sketches-reports
 
       - name: Check against database of expected results
         uses: giulcioffi/validate-compile-sketches-report@UpgradesAfterReview
         with:
           verbose: 'true'
-          sketches-report-path: sketches-reports
+          sketches-report-path: $GITHUB_WORKSPACE/downloaded-sketches-reports
           expected-results-database: $GITHUB_WORKSPACE/.github/database/database-reports/full-database-report.json
