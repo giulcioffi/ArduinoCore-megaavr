@@ -163,11 +163,11 @@
         },
         {
           "name": "/github/home/Arduino/libraries/WiFi101/examples/AP_SimpleWebServer",
-          "compilation_success": true
+          "compilation_success": false
         },
         {
           "name": "/github/home/Arduino/libraries/WiFi101/examples/CheckWifi101FirmwareVersion",
-          "compilation_success": true
+          "compilation_success": false
         },
         {
           "name": "/github/home/Arduino/libraries/WiFi101/examples/ConnectNoEncryption",

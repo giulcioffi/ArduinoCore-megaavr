@@ -35,7 +35,6 @@ jobs:
         # - ~/Arduino/libraries/MFRC522/examples
         - ~/Arduino/libraries/Ethernet/examples
         - ~/Arduino/libraries/WiFi101/examples
-        - ~/Arduino/libraries/WiFiNINA/examples
         # - ~/Arduino/libraries/ArduinoBearSSL/examples
         # - ~/Arduino/libraries/Arduino_LSM9DS1/examples
         # - ~/Arduino/libraries/TFT/examples
@@ -94,7 +93,6 @@ jobs:
             - name: Arduino_LSM9DS1
             - name: TFT
             - name: ArduinoMqttClient
-            - name: WiFiNINA
           platforms: |
             # Use Board Manager to install the latest release of Arduino megaAVR Boards to get the toolchain
             - name: "arduino:megaavr"
