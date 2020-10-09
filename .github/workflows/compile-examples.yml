@@ -122,7 +122,7 @@ jobs:
         with:
           verbose: 'true'
           sketches-report-path: $GITHUB_WORKSPACE/downloaded-sketches-reports
-          expected-results-database: $GITHUB_WORKSPACE/.github/database/database-reports/full-database-report.json
+          expected-results-database: $GITHUB_WORKSPACE/.github/database/database-reports/expected-results-database.json
 
       - name: Save memory usage change report as artifact
         uses: actions/upload-artifact@v2
